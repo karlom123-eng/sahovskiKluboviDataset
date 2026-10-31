@@ -1,0 +1,213 @@
+"jsonb_pretty"
+"[
+    {
+        ""Grad"": ""Zagreb"",
+        ""Liga"": ""1.A hrvatska šahovska liga"",
+        ""Naziv"": ""ŠK Zagreb"",
+        ""Adresa"": ""Masarykova 4"",
+        ""Igrači"": [
+            {
+                ""Ime"": ""Zdenko"",
+                ""Titula"": ""GM"",
+                ""Prezime"": ""Kožul"",
+                ""FIDE_rejting"": 2548,
+                ""Godina_rođenja"": 1966
+            }
+        ],
+        ""Osnovan"": 1886,
+        ""Predsjednik"": {
+            ""Ime"": ""Branko"",
+            ""Prezime"": ""Rogulj""
+        },
+        ""Broj_članova"": 42
+    },
+    {
+        ""Grad"": ""Kaštel Novi"",
+        ""Liga"": ""1.B hrvatska šahovska liga"",
+        ""Naziv"": ""ŠK Petar Sedlar - Pepe"",
+        ""Adresa"": ""Obala kralja Tomislava 12"",
+        ""Igrači"": [
+            {
+                ""Ime"": ""Bogdan"",
+                ""Titula"": ""GM"",
+                ""Prezime"": ""Lalić"",
+                ""FIDE_rejting"": 2456,
+                ""Godina_rođenja"": 1964
+            }
+        ],
+        ""Osnovan"": 1970,
+        ""Predsjednik"": {
+            ""Ime"": ""Petar"",
+            ""Prezime"": ""Sedlar""
+        },
+        ""Broj_članova"": 25
+    },
+    {
+        ""Grad"": ""Solin"",
+        ""Liga"": ""1.A hrvatska šahovska liga"",
+        ""Naziv"": ""GŠK Solin-Cemex"",
+        ""Adresa"": ""Kralja Zvonimira 50"",
+        ""Igrači"": [
+            {
+                ""Ime"": ""Davor"",
+                ""Titula"": ""GM"",
+                ""Prezime"": ""Rogić"",
+                ""FIDE_rejting"": 2450,
+                ""Godina_rođenja"": 1971
+            }
+        ],
+        ""Osnovan"": 1946,
+        ""Predsjednik"": {
+            ""Ime"": ""Ivan"",
+            ""Prezime"": ""Marin""
+        },
+        ""Broj_članova"": 35
+    },
+    {
+        ""Grad"": ""Pula"",
+        ""Liga"": ""1.B hrvatska šahovska liga"",
+        ""Naziv"": ""ŠK Pula"",
+        ""Adresa"": ""Giardini 2"",
+        ""Igrači"": [
+            {
+                ""Ime"": ""Nenad"",
+                ""Titula"": ""GM"",
+                ""Prezime"": ""Ferčec"",
+                ""FIDE_rejting"": 2422,
+                ""Godina_rođenja"": 1961
+            }
+        ],
+        ""Osnovan"": 1947,
+        ""Predsjednik"": {
+            ""Ime"": ""Valter"",
+            ""Prezime"": ""Valković""
+        },
+        ""Broj_članova"": 20
+    },
+    {
+        ""Grad"": ""Požega"",
+        ""Liga"": ""2. hrvatska šahovska liga - Istok"",
+        ""Naziv"": ""ŠK Požega"",
+        ""Adresa"": ""Trg Svetog Trojstva 1"",
+        ""Igrači"": [
+            {
+                ""Ime"": ""Mladen"",
+                ""Titula"": ""GM"",
+                ""Prezime"": ""Muše"",
+                ""FIDE_rejting"": 2390,
+                ""Godina_rođenja"": 1963
+            }
+        ],
+        ""Osnovan"": 1925,
+        ""Predsjednik"": {
+            ""Ime"": ""Branko"",
+            ""Prezime"": ""Mravunac""
+        },
+        ""Broj_članova"": 30
+    },
+    {
+        ""Grad"": ""Štrigova"",
+        ""Liga"": ""2. hrvatska šahovska liga - Sjever"",
+        ""Naziv"": ""ŠK Stridon"",
+        ""Adresa"": ""Štrigova 100"",
+        ""Igrači"": [
+            {
+                ""Ime"": ""Dražen"",
+                ""Titula"": ""IM"",
+                ""Prezime"": ""Muše"",
+                ""FIDE_rejting"": 2377,
+                ""Godina_rođenja"": 1971
+            }
+        ],
+        ""Osnovan"": 1975,
+        ""Predsjednik"": {
+            ""Ime"": ""Ivan"",
+            ""Prezime"": ""Novak""
+        },
+        ""Broj_članova"": 22
+    },
+    {
+        ""Grad"": ""Rijeka"",
+        ""Liga"": ""1.A hrvatska šahovska liga"",
+        ""Naziv"": ""ŠK Rijeka"",
+        ""Adresa"": ""Riva Boduli 1"",
+        ""Igrači"": [
+            {
+                ""Ime"": ""Boris"",
+                ""Titula"": ""IM"",
+                ""Prezime"": ""Golubović"",
+                ""FIDE_rejting"": 2335,
+                ""Godina_rođenja"": 1973
+            }
+        ],
+        ""Osnovan"": 1932,
+        ""Predsjednik"": {
+            ""Ime"": ""Božidar"",
+            ""Prezime"": ""Brdar""
+        },
+        ""Broj_članova"": 45
+    },
+    {
+        ""Grad"": ""Osijek"",
+        ""Liga"": ""1.A hrvatska šahovska liga"",
+        ""Naziv"": ""ŠK FERIT-Osijek"",
+        ""Adresa"": ""Trg bana Josipa Jelačića 3"",
+        ""Igrači"": [
+            {
+                ""Ime"": ""Nenad"",
+                ""Titula"": ""IM"",
+                ""Prezime"": ""Mrkonjić"",
+                ""FIDE_rejting"": 2334,
+                ""Godina_rođenja"": 1966
+            }
+        ],
+        ""Osnovan"": 1980,
+        ""Predsjednik"": {
+            ""Ime"": ""Josip"",
+            ""Prezime"": ""Balen""
+        },
+        ""Broj_članova"": 38
+    },
+    {
+        ""Grad"": ""Slavonski Brod"",
+        ""Liga"": ""1.B hrvatska šahovska liga"",
+        ""Naziv"": ""ŠK Đuro Đaković"",
+        ""Adresa"": ""Petra Svačića 2"",
+        ""Igrači"": [
+            {
+                ""Ime"": ""Robert"",
+                ""Titula"": ""FM"",
+                ""Prezime"": ""Dabo-Peranić"",
+                ""FIDE_rejting"": 2334,
+                ""Godina_rođenja"": 1970
+            }
+        ],
+        ""Osnovan"": 1928,
+        ""Predsjednik"": {
+            ""Ime"": ""Zlatko"",
+            ""Prezime"": ""Klarić""
+        },
+        ""Broj_članova"": 28
+    },
+    {
+        ""Grad"": ""Split"",
+        ""Liga"": ""2. hrvatska šahovska liga - Jug"",
+        ""Naziv"": ""ŠK Brda"",
+        ""Adresa"": ""Vukovarska 140"",
+        ""Igrači"": [
+            {
+                ""Ime"": ""Robert"",
+                ""Titula"": ""IM"",
+                ""Prezime"": ""Lončar"",
+                ""FIDE_rejting"": 2324,
+                ""Godina_rođenja"": 1964
+            }
+        ],
+        ""Osnovan"": 1968,
+        ""Predsjednik"": {
+            ""Ime"": ""Mirko"",
+            ""Prezime"": ""Šundov""
+        },
+        ""Broj_članova"": 32
+    }
+]"
