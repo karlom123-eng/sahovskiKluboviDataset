@@ -26,7 +26,7 @@ Otvoreni skup podataka o šahovkim klubovima i nekim njihovim igračima
 4. **titula** (VARCHAR): Šahovska titula.
 5. **godinaRodjenja** (INT): Godina rođenja igrača.
 
-**Sustav:** PostgreSQL 18 (pgAdmin 4). Relacijski model 1:N (klub -> igrači) povezan preko ključa `klubKod`.
+**Sustav:** PostgreSQL 18 (pgAdmin 4). Relacijski model 1:N (klub -> igrači) povezan preko ključa klubKod.
 
 
 
