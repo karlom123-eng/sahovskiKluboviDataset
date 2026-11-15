@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://raw.githubusercontent.com/karlom123-eng/sahovskiKluboviDataset/main/public/sahovski_klubovi.json"
+    "$id": "https://raw.githubusercontent.com/karlom123-eng/sahovskiKluboviDataset/main/public/sahovski_klubovi.json",
     "title": "Šahovski klubovi",
     "description": "Otvoreni skup podataka o odabranim hrvatskim šahovskim klubovima i njihovim istaknutim igračima.",
     "type": "array",
