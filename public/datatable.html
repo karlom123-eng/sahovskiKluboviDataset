@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Šahovski klubovi – tablica</title>
+</head>
+<body>
+    <h1>Šahovski klubovi</h1>
+    <form id="filter-obrazac">
+    <label for="filter-tekst">Tekst za pretraživanje:</label>
+    <input type="text" id="filter-tekst">
+
+    <label for="filter-atribut">Pretraži po:</label>
+    <select id="filter-atribut">
+        <option value="svi">Svi atributi</option>
+        <option value="kod">Kod</option>
+        <option value="naziv">Naziv</option>
+        <option value="grad">Grad</option>
+        <option value="osnutak">Godina osnutka</option>
+        <option value="predsjednik">Predsjednik</option>
+        <option value="brojClanova">Broj članova</option>
+        <option value="liga">Liga</option>
+        <option value="adresa">Adresa</option>
+        <option value="ime">Ime igrača</option>
+        <option value="prezime">Prezime igrača</option>
+        <option value="fideRejting">FIDE rejting</option>
+        <option value="titula">Titula</option>
+        <option value="godinaRodjenja">Godina rođenja</option>
+    </select>
+
+    
+</form>
+
+   
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Kod</th>
+                <th>Naziv</th>
+                <th>Grad</th>
+                <th>Osnutak</th>
+                <th>Predsjednik</th>
+                <th>Broj članova</th>
+                <th>Liga</th>
+                <th>Adresa</th>
+                <th>Ime igrača</th>
+                <th>Prezime igrača</th>
+                <th>FIDE rejting</th>
+                <th>Titula</th>
+                <th>Godina rođenja</th>
+            </tr>
+        </thead>
+        <tbody id="tablica-podaci"></tbody>
+    </table>
+
+
+<a href="#" id="preuzmi-csv">Preuzmi CSV</a>
+<br>
+<a href="#" id="preuzmi-json">Preuzmi JSON</a>
+
+<script>
+    let sviKlubovi = [];
+    let prikazaniKlubovi = [];
+    const stupci = [
+    ['kod', 'Kod'],
+    ['naziv', 'Naziv'],
+    ['grad', 'Grad'],
+    ['osnutak', 'Osnutak'],
+    ['predsjednik', 'Predsjednik'],
+    ['brojClanova', 'Broj članova'],
+    ['liga', 'Liga'],
+    ['adresa', 'Adresa'],
+    ['ime', 'Ime igrača'],
+    ['prezime', 'Prezime igrača'],
+    ['fideRejting', 'FIDE rejting'],
+    ['titula', 'Titula'],
+    ['godinaRodjenja', 'Godina rođenja']
+];
+
+function preuzmiDatoteku(sadrzaj, naziv, tip) {
+    const blob = new Blob([sadrzaj], { type: tip });
+    const url = URL.createObjectURL(blob);
+    const poveznica = document.createElement('a');
+
+    poveznica.href = url;
+    poveznica.download = naziv;
+    poveznica.click();
+
+    URL.revokeObjectURL(url);
+}
+
+document.getElementById('preuzmi-json').addEventListener('click', e => {
+    e.preventDefault();
+
+    preuzmiDatoteku(
+        JSON.stringify(prikazaniKlubovi, null, 2),
+        'klubovi.json',
+        'application/json;charset=utf-8'
+    );
+});
+
+document.getElementById('preuzmi-csv').addEventListener('click', e => {
+    e.preventDefault();
+
+    const redovi = [
+        stupci.map(stupac => stupac[1]),
+        ...prikazaniKlubovi.map(klub =>
+            stupci.map(([kljuc]) => klub[kljuc] ?? '')
+        )
+    ];
+
+    const csv = '\uFEFF' + redovi.map(red =>
+        red.map(vrijednost =>
+            '"' + String(vrijednost).replace(/"/g, '""') + '"'
+        ).join(';')
+    ).join('\n');
+
+    preuzmiDatoteku(csv, 'klubovi.csv', 'text/csv;charset=utf-8');
+});
+    async function ucitajKlubove() {
+        const odgovor = await fetch('/api/klubovi');
+        sviKlubovi = await odgovor.json();
+        prikaziKlubove(sviKlubovi);
+    }
+
+    function prikaziKlubove(klubovi) {
+        prikazaniKlubovi = klubovi;
+        const tijeloTablice = document.getElementById('tablica-podaci');
+        tijeloTablice.innerHTML = '';
+
+        klubovi.forEach(klub => {
+            const red = document.createElement('tr');
+
+            const vrijednosti = [
+                klub.kod, klub.naziv, klub.grad, klub.osnutak,
+                klub.predsjednik, klub.brojClanova, klub.liga,
+                klub.adresa, klub.ime, klub.prezime,
+                klub.fideRejting, klub.titula, klub.godinaRodjenja
+            ];
+
+            vrijednosti.forEach(vrijednost => {
+                const celija = document.createElement('td');
+                celija.textContent = vrijednost ?? '';
+                red.appendChild(celija);
+            });
+
+            tijeloTablice.appendChild(red);
+        });
+    }
+
+    function filtrirajKlubove() {
+        const tekst = document.getElementById('filter-tekst').value.toLowerCase();
+        const atribut = document.getElementById('filter-atribut').value;
+
+        const filtrirani = sviKlubovi.filter(klub => {
+            const vrijednosti = atribut === 'svi'
+                ? Object.values(klub)
+                : [klub[atribut]];
+
+            return vrijednosti.some(vrijednost =>
+                String(vrijednost ?? '').toLowerCase().includes(tekst)
+            );
+        });
+
+        prikaziKlubove(filtrirani);
+    }
+
+    document.getElementById('filter-obrazac')
+        .addEventListener('submit', e => e.preventDefault());
+
+    document.getElementById('filter-tekst')
+        .addEventListener('input', filtrirajKlubove);
+
+    document.getElementById('filter-atribut')
+        .addEventListener('change', filtrirajKlubove);
+
+    ucitajKlubove();
+</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://example.org/sahovskiKluboviDataset.json",
+    "title": "Šahovski klubovi",
+    "description": "Otvoreni skup podataka o odabranim hrvatskim šahovskim klubovima i njihovim istaknutim igračima.",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "title": "Šahovski klub",
+        "description": "Podaci o jednom šahovskom klubu i njegovim igračima.",
+        "required": [
+            "Naziv",
+            "Grad",
+            "Osnovan",
+            "Predsjednik",
+            "Broj_članova",
+            "Liga",
+            "Adresa",
+            "Igrači"
+        ],
+        "properties": {
+            "Naziv": {
+                "type": "string",
+                "title": "Naziv",
+                "description": "Puni naziv šahovskog kluba."
+            },
+            "Grad": {
+                "type": "string",
+                "title": "Grad",
+                "description": "Sjedište kluba."
+            },
+            "Osnovan": {
+                "type": "integer",
+                "title": "Osnovan",
+                "description": "Godina osnivanja kluba."
+            },
+            "Predsjednik": {
+                "type": "string",
+                "title": "Predsjednik",
+                "description": "Ime i prezime predsjednika kluba."
+            },
+            "Broj_članova": {
+                "type": "integer",
+                "title": "Broj članova",
+                "description": "Ukupan broj registriranih članova."
+            },
+            "Liga": {
+                "type": "string",
+                "title": "Liga",
+                "description": "Liga u kojoj sudjeluje najjača ekipa kluba."
+            },
+            "Adresa": {
+                "type": "string",
+                "title": "Adresa",
+                "description": "Ulica i kućni broj sjedišta."
+            },
+            "Igrači": {
+                "type": "array",
+                "title": "Igrači",
+                "description": "Popis istaknutih igrača kluba.",
+                "items": {
+                    "type": "object",
+                    "title": "Igrač",
+                    "description": "Podaci o jednom igraču.",
+                    "required": [
+                        "Ime",
+                        "Prezime",
+                        "FIDE_rejting",
+                        "Titula",
+                        "Godina_rođenja"
+                    ],
+                    "properties": {
+                        "Ime": {
+                            "type": "string",
+                            "title": "Ime",
+                            "description": "Ime igrača."
+                        },
+                        "Prezime": {
+                            "type": "string",
+                            "title": "Prezime",
+                            "description": "Prezime igrača."
+                        },
+                        "FIDE_rejting": {
+                            "type": "integer",
+                            "title": "FIDE rejting",
+                            "description": "FIDE rejting igrača."
+                        },
+                        "Titula": {
+                            "type": "string",
+                            "title": "Titula",
+                            "description": "Šahovska titula igrača."
+                        },
+                        "Godina_rođenja": {
+                            "type": "integer",
+                            "title": "Godina rođenja",
+                            "description": "Godina rođenja igrača."
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
